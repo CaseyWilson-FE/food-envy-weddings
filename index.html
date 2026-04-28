@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Food Envy Weddings — Wellington's Most Iconic Caterer</title>
+<meta name="description" content="Wellington wedding catering. Be a guest at your own wedding. Menus, pricing and a 6-step process designed to keep your day calm, considered and unforgettable." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --fe-black:#000000;
+    --fe-green:#05B085;
+    --fe-green-deep:#048a69;
+    --fe-beige:#F1EAE0;
+    --fe-beige-deep:#e6dccd;
+    --fe-white:#FFFFFF;
+    --fe-ink:#1a1a1a;
+    --fe-mute:#5a5a5a;
+    --fe-hairline:rgba(0,0,0,.12);
+    --max:1180px;
+    --pad:clamp(20px, 4vw, 64px);
+    --radius:2px;
+    --shadow:0 30px 60px -30px rgba(0,0,0,.25);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Work Sans', system-ui, sans-serif;
+    font-weight:300;
+    color:var(--fe-ink);
+    background:var(--fe-white);
+    line-height:1.6;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+  /* Typographic system */
+  h1,h2,h3,h4{font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0 0 .4em}
+  h1{font-size:clamp(40px, 7vw, 84px)}
+  h2{font-size:clamp(32px, 5vw, 56px)}
+  h3{font-size:clamp(22px, 2.4vw, 28px);letter-spacing:-.01em}
+  h4{font-size:18px;font-weight:600;letter-spacing:0}
+  p{margin:0 0 1em}
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--fe-green);
+    margin:0 0 18px;
+    display:inline-block;
+  }
+  .eyebrow.on-dark{color:var(--fe-green)}
+  .lede{font-size:clamp(18px,1.6vw,22px);font-weight:300;color:var(--fe-mute);max-width:62ch}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:18px 28px;
+    border:1px solid transparent;
+    font-family:inherit;font-weight:600;font-size:15px;letter-spacing:.04em;
+    text-decoration:none;cursor:pointer;
+    border-radius:var(--radius);
+    transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    line-height:1;text-transform:uppercase;
+  }
+  .btn-primary{background:var(--fe-green);color:var(--fe-black)}
+  .btn-primary:hover{background:var(--fe-green-deep);color:var(--fe-white);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--fe-black);border-color:var(--fe-black)}
+  .btn-outline:hover{background:var(--fe-black);color:var(--fe-white);transform:translateY(-1px)}
+  .btn-outline-light{background:transparent;color:var(--fe-white);border-color:var(--fe-white)}
+  .btn-outline-light:hover{background:var(--fe-white);color:var(--fe-black);transform:translateY(-1px)}
+  .btn-dark{background:var(--fe-black);color:var(--fe-white)}
+  .btn-dark:hover{background:var(--fe-ink);transform:translateY(-1px)}
+
+  /* Nav */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--fe-hairline);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fe-black);font-weight:800;letter-spacing:.02em;font-size:18px;text-transform:uppercase}
+  .brand .dot{width:10px;height:10px;background:var(--fe-green);border-radius:50%}
+  .nav-links{display:none;gap:32px;font-size:14px;font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+  .nav-links a{text-decoration:none;color:var(--fe-black);opacity:.75;transition:opacity .15s}
+  .nav-links a:hover{opacity:1}
+  .nav .btn{padding:14px 20px;font-size:13px}
+  @media(min-width:900px){.nav-links{display:flex}}
+
+  /* Hero */
+  .hero{
+    position:relative;color:var(--fe-white);overflow:hidden;
+    min-height:min(94vh, 880px);
+    display:flex;align-items:flex-end;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.85) 100%),
+      url('images/hero.jpg') center 85%/cover no-repeat;
+  }
+  .hero-content{position:relative;z-index:2;padding:120px 0 80px;width:100%}
+  .hero h1{max-width:14ch;margin-bottom:.3em}
+  .hero .eyebrow{color:var(--fe-green);font-size:16px;letter-spacing:.28em;margin-bottom:24px}
+  .hero .lede{color:rgba(255,255,255,.85);max-width:54ch;margin-bottom:36px}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px}
+  .trust-strip{
+    border-top:1px solid rgba(255,255,255,.18);
+    padding-top:28px;
+    display:flex;flex-wrap:wrap;gap:18px 32px;
+    font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:500;
+  }
+  @media(min-width:760px){.trust-strip{font-size:15px}}
+  .trust-strip span::before{content:"";display:inline-block;width:7px;height:7px;background:var(--fe-green);border-radius:50%;margin-right:12px;vertical-align:middle;transform:translateY(-2px)}
+
+  /* Section base */
+  section{padding:clamp(72px, 9vw, 130px) 0;position:relative}
+  .bg-beige{background:var(--fe-beige)}
+  .bg-white{background:var(--fe-white)}
+  .bg-black{background:var(--fe-black);color:var(--fe-white)}
+  .bg-black h2,.bg-black h3{color:var(--fe-white)}
+  .bg-black .lede{color:rgba(255,255,255,.75)}
+
+  .section-head{max-width:62ch;margin:0 0 56px}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+  .hr{height:1px;background:var(--fe-hairline);border:0;margin:0}
+
+  /* Empathy block */
+  .empathy{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  .empathy-quote{
+    font-family:'Work Sans',sans-serif;font-weight:300;
+    font-size:clamp(24px, 3vw, 38px);line-height:1.25;letter-spacing:-.01em;
+    color:var(--fe-ink);
+  }
+  .empathy-quote em{font-style:normal;background:var(--fe-green);padding:0 .15em;color:var(--fe-black)}
+  .empathy small{display:block;margin-top:24px;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--fe-mute);font-weight:500}
+
+  /* Value pillars */
+  .pillars{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:640px){.pillars{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1024px){.pillars{grid-template-columns:repeat(3,1fr)}}
+  .pillar{background:var(--fe-white);padding:36px 28px;border:1px solid var(--fe-hairline);border-top:3px solid var(--fe-green)}
+  .pillar h4{margin-bottom:10px;font-size:19px;line-height:1.3}
+  .pillar p{font-size:15px;color:var(--fe-mute);margin:0}
+
+  /* Testimonials */
+  .reviews{display:grid;grid-template-columns:1fr;gap:24px}
+  @media(min-width:760px){.reviews{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1080px){.reviews{grid-template-columns:repeat(3,1fr)}}
+  .review{
+    background:var(--fe-white);
+    padding:36px 32px;
+    border:1px solid var(--fe-hairline);
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .review .stars{color:var(--fe-green);font-size:14px;letter-spacing:4px;margin-bottom:18px}
+  .review p{font-size:16px;line-height:1.55;color:var(--fe-ink);margin:0 0 24px}
+  .review cite{font-style:normal;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fe-mute);font-weight:600}
+
+  /* Packages (Godfather) */
+  .pack-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:48px}
+  .pack-tab{
+    border:1px solid var(--fe-hairline);background:var(--fe-white);
+    padding:14px 22px;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+    cursor:pointer;border-radius:var(--radius);color:var(--fe-ink);
+    transition:all .18s ease;
+  }
+  .pack-tab:hover{border-color:var(--fe-black)}
+  .pack-tab.active{background:var(--fe-black);color:var(--fe-white);border-color:var(--fe-black)}
+  .pack-grid{display:grid;grid-template-columns:1fr;gap:24px}
+  @media(min-width:760px){.pack-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1080px){.pack-grid{grid-template-columns:repeat(3,1fr)}}
+  .pack-card{
+    background:var(--fe-white);
+    border:1px solid var(--fe-hairline);
+    padding:36px 30px;
+    display:flex;flex-direction:column;
+    position:relative;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .pack-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .pack-card .price{font-size:48px;font-weight:800;letter-spacing:-.02em;line-height:1;margin:8px 0 4px}
+  .pack-card .price small{font-size:14px;font-weight:400;letter-spacing:.04em;color:var(--fe-mute);margin-left:6px}
+  .pack-card h3{margin-bottom:18px}
+  .pack-card .meta{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--fe-mute);font-weight:600;margin-bottom:8px}
+  .pack-card ul{list-style:none;padding:0;margin:24px 0 0;border-top:1px solid var(--fe-hairline);padding-top:20px}
+  .pack-card li{padding:8px 0;font-size:15px;color:var(--fe-ink);display:flex;gap:10px}
+  .pack-card li::before{content:"";display:inline-block;width:6px;height:6px;background:var(--fe-green);border-radius:50%;margin-top:9px;flex-shrink:0}
+  .pack-pane{display:none}
+  .pack-pane.active{display:block}
+  .pack-foot{margin-top:36px;text-align:center;font-size:14px;color:var(--fe-mute)}
+
+  /* Menu card variant */
+  .menu-card h3{margin-bottom:24px;font-size:24px;padding-bottom:14px;border-bottom:2px solid var(--fe-green);display:inline-block}
+  .menu-card .dishes{list-style:none;padding:0;margin:0}
+  .menu-card .dishes li{padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:15px;line-height:1.45;color:var(--fe-ink);display:flex;flex-direction:column;gap:4px}
+  .menu-card .dishes li:last-child{border-bottom:0}
+  .menu-card .dishes .diet{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fe-mute);font-weight:600}
+
+  /* Sample menu */
+  .menus{display:grid;grid-template-columns:1fr;gap:1px;background:var(--fe-hairline);border:1px solid var(--fe-hairline)}
+  @media(min-width:880px){.menus{grid-template-columns:repeat(3,1fr)}}
+  .menu-col{background:var(--fe-beige);padding:40px 32px}
+  .menu-col h3{margin-bottom:6px}
+  .menu-col .sub{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--fe-green);font-weight:600;margin-bottom:24px;display:block}
+  .menu-col ul{list-style:none;padding:0;margin:0}
+  .menu-col li{padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:15px;line-height:1.45}
+  .menu-col li:last-child{border-bottom:0}
+  .menu-col li small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fe-mute);margin-top:4px}
+  .dietary-note{margin-top:36px;text-align:center;font-size:14px;color:var(--fe-mute);max-width:60ch;margin-left:auto;margin-right:auto}
+
+  /* Real wedding */
+  .real-wedding{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+  @media(min-width:880px){.real-wedding{grid-template-columns:1.05fr 1fr;gap:80px}}
+  .real-img{aspect-ratio:4/5;background:url('images/fiona-junou-champagne.jpg') center/cover no-repeat;}
+  .real-content blockquote{font-size:clamp(22px, 2.4vw, 30px);line-height:1.3;font-weight:300;letter-spacing:-.01em;margin:0 0 28px;color:var(--fe-ink)}
+  .real-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 24px;border-top:1px solid var(--fe-hairline);padding-top:28px;margin-top:28px}
+  .real-meta div small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fe-mute);font-weight:600;margin-bottom:6px}
+  .real-meta div span{font-size:16px;font-weight:600}
+
+  /* Process */
+  .process{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.12)}
+  @media(min-width:760px){.process{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1080px){.process{grid-template-columns:repeat(3,1fr)}}
+  .step{background:var(--fe-black);padding:40px 32px;color:var(--fe-white)}
+  .step-num{font-size:12px;letter-spacing:.24em;color:var(--fe-green);font-weight:600;margin-bottom:18px}
+  .step h4{color:var(--fe-white);font-size:24px;margin-bottom:14px;font-weight:700;letter-spacing:-.01em}
+  .step p{color:rgba(255,255,255,.92);font-size:17px;line-height:1.55;margin:0;font-weight:400}
+
+  /* Risk reversal */
+  .promise{display:grid;grid-template-columns:1fr;gap:48px;align-items:start}
+  @media(min-width:880px){.promise{grid-template-columns:1fr 1fr;gap:80px}}
+  .promise-list{list-style:none;padding:0;margin:0}
+  .promise-list li{padding:24px 0;border-top:1px solid var(--fe-hairline);display:flex;gap:20px}
+  .promise-list li:last-child{border-bottom:1px solid var(--fe-hairline)}
+  .promise-list strong{display:block;font-size:18px;font-weight:600;margin-bottom:6px}
+  .promise-list span{color:var(--fe-mute);font-size:15px}
+  .promise-list .check{
+    flex-shrink:0;width:32px;height:32px;border-radius:50%;
+    background:var(--fe-green);color:var(--fe-black);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
+  }
+
+  /* Late night */
+  .latenight{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+  @media(min-width:880px){.latenight{grid-template-columns:1.2fr 1fr;gap:64px}}
+  .lategrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--fe-hairline);border:1px solid var(--fe-hairline)}
+  .lategrid div{background:var(--fe-white);padding:28px 24px}
+  .lategrid h4{margin-bottom:6px}
+  .lategrid p{font-size:13px;color:var(--fe-mute);margin:0;letter-spacing:.04em}
+
+  /* Founder */
+  .founder{display:grid;grid-template-columns:1fr;gap:48px;align-items:center}
+  @media(min-width:760px){.founder{grid-template-columns:1fr 1.4fr;gap:64px}}
+  .founder-img{aspect-ratio:4/5;background:url('images/bridal-party.jpg') center/cover no-repeat}
+  .signature{font-family:'Work Sans',sans-serif;font-weight:600;font-style:italic;font-size:24px;margin-top:24px}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  .faq details{
+    border-top:1px solid var(--fe-hairline);
+    padding:24px 0;
+  }
+  .faq details:last-of-type{border-bottom:1px solid var(--fe-hairline)}
+  .faq summary{
+    list-style:none;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:24px;
+    font-weight:600;font-size:18px;letter-spacing:-.01em;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:"+";font-size:28px;color:var(--fe-green);font-weight:300;line-height:1;
+    transition:transform .2s ease;
+  }
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{margin:18px 0 0;color:var(--fe-mute);font-size:16px;max-width:64ch}
+
+  /* Lead magnet (PRIMARY conversion) */
+  .leadmag{background:var(--fe-black);color:var(--fe-white);position:relative;overflow:hidden}
+  .leadmag::before{
+    content:"";position:absolute;width:600px;height:600px;border-radius:50%;
+    background:radial-gradient(circle, rgba(5,176,133,.18), transparent 70%);
+    top:-200px;right:-200px;
+  }
+  .leadmag-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;position:relative;z-index:2}
+  @media(min-width:880px){.leadmag-grid{grid-template-columns:1fr 1.3fr;gap:80px}}
+  .guide-mock{
+    aspect-ratio:3/4;
+    background:linear-gradient(160deg, rgba(0,0,0,.55), rgba(0,0,0,.85)), url('images/wedding-aisle.jpg') center/cover no-repeat;
+    background-blend-mode:multiply;
+    transform:rotate(-4deg);
+    box-shadow:0 40px 80px -20px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06);
+    padding:42px 32px;
+    color:var(--fe-white);
+    display:flex;flex-direction:column;justify-content:space-between;
+    max-width:380px;
+    margin:0 auto;
+  }
+  .guide-mock .gm-eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--fe-green);font-weight:600;margin-bottom:16px}
+  .guide-mock h3{font-size:36px;font-weight:800;line-height:1.05;letter-spacing:-.02em;color:var(--fe-white);margin:0}
+  .guide-mock .gm-foot{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.6;font-weight:600;margin-top:auto;padding-top:40px}
+  .leadmag .eyebrow{color:var(--fe-green)}
+  .leadmag h2{color:var(--fe-white);max-width:18ch}
+  .leadmag-list{list-style:none;padding:0;margin:24px 0 32px;display:grid;gap:14px}
+  .leadmag-list li{display:flex;gap:14px;align-items:flex-start;color:rgba(255,255,255,.85);font-size:16px}
+  .leadmag-list li::before{content:"";width:8px;height:8px;background:var(--fe-green);border-radius:50%;margin-top:9px;flex-shrink:0}
+
+  /* Forms */
+  .form{display:grid;gap:14px;max-width:520px}
+  .form-row{display:grid;gap:14px}
+  @media(min-width:560px){.form-row.two{grid-template-columns:1fr 1fr}}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:.7}
+  .field input, .field select, .field textarea{
+    font:inherit;font-size:16px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    color:var(--fe-white);
+    padding:14px 16px;border-radius:var(--radius);
+    transition:border .18s, background .18s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--fe-green);background:rgba(255,255,255,.12);
+  }
+  .form .btn{margin-top:8px;width:fit-content}
+  .form-note{font-size:13px;color:rgba(255,255,255,.6);margin-top:14px}
+
+  /* Light form variant for enquiry section */
+  .form.light .field input,
+  .form.light .field select,
+  .form.light .field textarea{
+    background:var(--fe-white);
+    border:1px solid var(--fe-hairline);
+    color:var(--fe-ink);
+  }
+  .form.light .field label{color:var(--fe-ink);opacity:.85}
+  .form.light .field input:focus,
+  .form.light .field select:focus,
+  .form.light .field textarea:focus{border-color:var(--fe-green);background:var(--fe-white)}
+  .form.light .form-note{color:var(--fe-mute)}
+
+  .enquiry{display:grid;grid-template-columns:1fr;gap:48px}
+  @media(min-width:880px){.enquiry{grid-template-columns:1fr 1.2fr;gap:80px}}
+  .zoe-card{display:flex;align-items:center;gap:18px;margin-top:32px}
+  .zoe-card img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+  .zoe-card div small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fe-mute);font-weight:600;margin-bottom:4px}
+  .zoe-card div strong{font-size:16px;font-weight:600}
+
+  /* Footer */
+  footer{background:var(--fe-black);color:rgba(255,255,255,.7);padding:56px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.12)}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+  .foot-grid h5{color:var(--fe-white);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;margin:0 0 18px}
+  .foot-grid a{color:rgba(255,255,255,.7);text-decoration:none;display:block;padding:4px 0;font-size:15px}
+  .foot-grid a:hover{color:var(--fe-green)}
+  .footline{font-size:13px;color:rgba(255,255,255,.5);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+  .footbrand{display:flex;align-items:center;gap:10px;color:var(--fe-white);font-weight:800;text-transform:uppercase;font-size:18px;margin-bottom:14px}
+  .footbrand .dot{width:10px;height:10px;background:var(--fe-green);border-radius:50%}
+
+  /* Sticky mobile CTA */
+  .mobile-cta{
+    position:fixed;left:16px;right:16px;bottom:16px;z-index:60;
+    display:flex;justify-content:center;
+  }
+  .mobile-cta a{
+    width:100%;max-width:480px;
+    background:var(--fe-green);color:var(--fe-black);
+    padding:18px 22px;text-align:center;
+    font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:14px;
+    text-decoration:none;border-radius:var(--radius);
+    box-shadow:0 12px 30px -8px rgba(0,0,0,.35);
+  }
+  @media(min-width:900px){.mobile-cta{display:none}}
+
+  /* Scroll reveal */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  ::selection{background:var(--fe-green);color:var(--fe-black)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span>Food Envy</a>
+    <div class="nav-links">
+      <a href="#packages">Packages</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#guide" class="btn btn-primary">Get the Wedding Guide</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-content">
+    <span class="eyebrow">Wellington Wedding Catering</span>
+    <h1>Be a guest at your own wedding.</h1>
+    <p class="lede">Every detail of your reception — food, staff, hire, set-up, cake, pack-down — handled by one team. So you show up, sit down, and stay in the moment.</p>
+    <div class="hero-ctas">
+      <a href="#guide" class="btn btn-primary">Get the Wedding Guide</a>
+      <a href="#enquire" class="btn btn-outline-light">Send Us Your Date</a>
+    </div>
+    <div class="trust-strip">
+      <span>14 Years</span>
+      <span>50+ Weddings</span>
+      <span>Multi-Award Winning</span>
+      <span>WOW &amp; Ultra Music Festival Caterer</span>
+    </div>
+  </div>
+</header>
+
+<!-- EMPATHY -->
+<section class="bg-beige">
+  <div class="wrap empathy reveal">
+    <div>
+      <span class="eyebrow">The day, the way you imagined it</span>
+      <p class="empathy-quote">You shouldn't spend your wedding day chasing six different suppliers, watching the clock, or quietly wondering whether the dietaries got passed on. <em>You should be in the photographs.</em></p>
+      <small>— What couples tell us before they book</small>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="bg-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Food Envy</span>
+      <h2>The team that makes Wellington's biggest nights feel effortless — now in your corner.</h2>
+      <p class="lede">Wellington's most iconic caterer, trusted by couples and the city's biggest events alike. Delicious, considered food, a team that genuinely cares, and a kind of organised calm that makes wedding days feel easy.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <h4>The same team behind the city's biggest nights.</h4>
+        <p>From World of WearableArts to Ultra Music Festival — the chefs, kitchen and coordination that pull off those evenings are the ones in your venue on your wedding day.</p>
+      </div>
+      <div class="pillar">
+        <h4>Equipment, staff, set-up, service, pack-down.</h4>
+        <p>An experienced team taking care of all of it, so you don't have to juggle vendors or chase suppliers in the lead-up.</p>
+      </div>
+      <div class="pillar">
+        <h4>The day runs without you running it.</h4>
+        <p>An experienced team looks after you from your first enquiry to the final pack-down. Considered, not chaotic.</p>
+      </div>
+      <div class="pillar">
+        <h4>Locally inspired, beautifully plated.</h4>
+        <p>Menus designed by chefs who care, built to please everyone in the room — including your guests with dietary requirements.</p>
+      </div>
+      <div class="pillar">
+        <h4>Wellington's only multi-award-winning caterers.</h4>
+        <p>14 years, 50+ weddings, and the trophies to back it. You're in safe hands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="bg-beige" id="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What couples say</span>
+      <h2>The most consistent feedback we receive: somehow, the day was easy.</h2>
+    </div>
+    <div class="reviews reveal">
+      <article class="review">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p>From the very beginning the experience has been so positive, easy and completely stress-free. The guests couldn't stop commenting on how delicious the food was. Quite a few people said it was the best wedding food they've ever had. It really was a 10/10 experience from start to finish.</p>
+        </div>
+        <cite>Michaela &amp; Jake — September 2025</cite>
+      </article>
+      <article class="review">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p>A huge huge thank you to you and the team. Your food was delicious — one person said it was the best beef they've ever had. The staff were all so lovely and kind. We got home and found the bottle of wine and card your team had left, which was an even better final touch.</p>
+        </div>
+        <cite>Anna &amp; Nick — January 2026</cite>
+      </article>
+      <article class="review">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p>Best day of my life hands down. The service and the food was amazing. We really enjoyed everything and got a lot of good feedback from our whānau and friends. Thanks for our little gift box that was sooo cute. I wouldn't have changed anything.</p>
+        </div>
+        <cite>Jude &amp; Shontana — January 2026</cite>
+      </article>
+      <article class="review">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p>It was amazing. Particularly the ceviche and the dietary meals. Your staff were super fun and professional and went out of their way to make sure Caitlin was getting what she wanted.</p>
+        </div>
+        <cite>Ben &amp; Caitlin — February 2026</cite>
+      </article>
+      <article class="review">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p>We couldn't have been more pleased with you, the team and the food. Your professionalism, organisation and delicious food really made our day, so a massive thank you for everything.</p>
+        </div>
+        <cite>Lottie &amp; Callum — February 2026</cite>
+      </article>
+      <article class="review" style="background:var(--fe-black);color:var(--fe-white);border-color:var(--fe-black)">
+        <div>
+          <div class="stars" style="color:var(--fe-green)">★★★★★</div>
+          <p style="color:var(--fe-white)">Want to read more? The full collection of reviews and real wedding stories lives inside our Wedding Guide — alongside menus, pricing and our 6-step process.</p>
+        </div>
+        <a href="#guide" class="btn btn-primary" style="margin-top:8px">Send Me the Guide</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MENUS -->
+<section class="bg-white" id="packages">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Sample Menus</span>
+      <h2>Locally inspired. Beautifully plated. Designed by chefs who care.</h2>
+      <p class="lede">A taste of what we cook. Mix and match across formats — every menu is finalised with you at your complimentary tasting.</p>
+    </div>
+
+    <div class="pack-tabs reveal" role="tablist">
+      <button class="pack-tab active" data-pane="canapes">Canapés</button>
+      <button class="pack-tab" data-pane="family">Family Style</button>
+      <button class="pack-tab" data-pane="plated">Plated</button>
+      <button class="pack-tab" data-pane="latenight">Late Night</button>
+    </div>
+
+    <!-- Canapés -->
+    <div class="pack-pane active" id="canapes">
+      <div class="pack-grid">
+        <div class="pack-card menu-card">
+          <h3>Cold</h3>
+          <ul class="dishes">
+            <li>Moroccan chicken filo tart, mint yoghurt</li>
+            <li>Seared beef crostini, blue cheese, onion jam</li>
+            <li>Smoked salmon mousse, lemon and dill on blini</li>
+            <li>Fish ceviche, lime, coriander &amp; fresh chilli<span class="diet">gf · df</span></li>
+            <li>Cured meat, pesto-marinated bocconcini, tomato skewer<span class="diet">gf</span></li>
+            <li>Sundried tomato hummus crostini, dukkah<span class="diet">vg · n</span></li>
+          </ul>
+        </div>
+        <div class="pack-card menu-card">
+          <h3>Warm</h3>
+          <ul class="dishes">
+            <li>Crispy pork belly skewer, apple purée<span class="diet">gf · df</span></li>
+            <li>Lamb meatball skewer, mint yoghurt<span class="diet">gf</span></li>
+            <li>Beef cheek croquette, mustard mayo</li>
+            <li>Panko-crumbed prawns, wasabi mayo</li>
+            <li>Cheese croquette, chipotle mayo<span class="diet">v</span></li>
+            <li>Mint and pea fritter, cranberry jam<span class="diet">vg</span></li>
+          </ul>
+        </div>
+        <div class="pack-card menu-card">
+          <h3>Sweet</h3>
+          <ul class="dishes">
+            <li>Pineapple upside-down cake, coconut and lime chantilly<span class="diet">v</span></li>
+            <li>Meringue nest, lemon curd, raspberry<span class="diet">v · gf</span></li>
+            <li>Chocolate, orange and pistachio truffle<span class="diet">vg · gf</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Family Style -->
+    <div class="pack-pane" id="family">
+      <div class="pack-grid">
+        <div class="pack-card menu-card">
+          <h3>Mains</h3>
+          <ul class="dishes">
+            <li>Beef fillet, fresh thyme, red wine jus, horseradish<span class="diet">gf</span></li>
+            <li>Chicken roulade, Italian herb velouté</li>
+            <li>Seared lamb rump, red pepper &amp; tomato salsa verde<span class="diet">df</span></li>
+            <li>Crispy skin pork belly, apple cider jus<span class="diet">gf · df · n</span></li>
+            <li>Pan-seared market fish, tomato passata, olive, caper &amp; herb salsa<span class="diet">gf · df</span></li>
+            <li>Vegetable Kiev, creamy nut-free pesto sauce<span class="diet">v</span></li>
+          </ul>
+        </div>
+        <div class="pack-card menu-card">
+          <h3>Salads &amp; Sides</h3>
+          <ul class="dishes">
+            <li>Roast pumpkin, baby spinach, edamame, soy &amp; sesame dressing<span class="diet">vg · gf</span></li>
+            <li>Fusilli, nut-free basil pesto, caramelised carrot, feta<span class="diet">v</span></li>
+            <li>Seasonal leaf, avocado, tomato, cucumber, balsamic<span class="diet">vg</span></li>
+            <li>Twice-cooked agria potatoes, butter, olive oil, sea salt<span class="diet">v · gf</span></li>
+            <li>Caramelised carrots, thyme and sea salt<span class="diet">vg · gf</span></li>
+            <li>Charred broccoli, pumpkin seeds, crispy capers<span class="diet">vg · gf</span></li>
+          </ul>
+        </div>
+        <div class="pack-card menu-card">
+          <h3>Desserts</h3>
+          <ul class="dishes">
+            <li>Warm apple strudel, vanilla crème anglaise<span class="diet">v</span></li>
+            <li>Citrus tiramisu<span class="diet">v</span></li>
+            <li>Warm sticky date pudding, butterscotch, chantilly</li>
+            <li>Velvety chocolate mousse, toasted seed praline<span class="diet">gf</span></li>
+            <li>Key lime pie<span class="diet">gf · vg</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plated -->
+    <div class="pack-pane" id="plated">
+      <div class="pack-grid">
+        <div class="pack-card menu-card">
+          <h3>Entrées</h3>
+          <ul class="dishes">
+            <li>Venison carpaccio, pickled shallots, juniper vinaigrette<span class="diet">df · gf</span></li>
+            <li>Kingfish crudo, ponzu gel, micro coriander<span class="diet">df · gf</span></li>
+            <li>Duck liver pâté, burnt orange marmalade, crispy brioche</li>
+            <li>Charred eggplant, labneh, pomegranate, dukkah<span class="diet">v · df</span></li>
+            <li>Mushroom ceviche, pickled chilli, gem lettuce<span class="diet">vg · gf</span></li>
+          </ul>
+        </div>
+        <div class="pack-card menu-card">
+          <h3>Mains</h3>
+          <ul class="dishes">
+            <li>Beef fillet, charred broccolini, glazed carrots, red wine jus<span class="diet">gf · df</span></li>
+            <li>Lamb rump, tomato &amp; olive ragù, roast agria potatoes<span class="diet">df · gf</span></li>
+            <li>Harissa-rubbed chicken, jewelled rice, green goddess sauce<span class="diet">df · n</span></li>
+            <li>Crispy skin salmon, sweetcorn purée, charred leeks<span class="diet">gf</span></li>
+            <li>Orange and miso-glazed pork belly, coconut rice, bok choy<span class="diet">gf</span></li>
+            <li>Wild mushroom risotto cake, roast pumpkin purée, crispy kale<span class="diet">v · gf</span></li>
+          </ul>
+        </div>
+        <div class="pack-card menu-card">
+          <h3>Desserts</h3>
+          <ul class="dishes">
+            <li>Blackberry &amp; lemon thyme cheesecake, lemon shortbread<span class="diet">v</span></li>
+            <li>Coconut &amp; passionfruit tart, coconut milk pastry cream<span class="diet">gf</span></li>
+            <li>Citrus tiramisu, vanilla bean poached pear, crushed honeycomb<span class="diet">v</span></li>
+            <li>Velvety chocolate mousse, raspberry compote, seed praline<span class="diet">vg · gf</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Late Night -->
+    <div class="pack-pane" id="latenight">
+      <div class="pack-grid">
+        <div class="pack-card menu-card">
+          <h3>The Classics</h3>
+          <ul class="dishes">
+            <li>Southland cheese roll<span class="diet">v</span></li>
+            <li>Korean fried chicken, pickled daikon</li>
+            <li>Pork katsu sando, curry mustard, shaved cabbage<span class="diet">df</span></li>
+            <li>Lobster roll, kewpie mayo, chive butter</li>
+          </ul>
+        </div>
+        <div class="pack-card menu-card">
+          <h3>Something Indulgent</h3>
+          <ul class="dishes">
+            <li>Beef tartare, potato chips<span class="diet">gf</span></li>
+            <li>Seared beef fillet, agria potatoes, béarnaise, crispy shallots<span class="diet">gf</span></li>
+            <li>Bruschetta, cured salmon, cream cheese, pickled red onion, dill</li>
+            <li>Croquette, bacon, mozzarella, green goddess</li>
+          </ul>
+        </div>
+        <div class="pack-card menu-card">
+          <h3>Something Lighter</h3>
+          <ul class="dishes">
+            <li>Roasted tomato galette, whipped feta, salsa verde</li>
+            <li>Lemon pepper wedges, vegan aioli<span class="diet">vg · gf</span></li>
+            <li>Crispy tofu lettuce cups, glass noodles, chilli-lime<span class="diet">vg · gf</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="pack-foot">Vegan, gluten free, dairy free and nut free options across every menu — no compromise. Menus rotate seasonally; final selections are confirmed at your complimentary tasting.</p>
+    <p class="pack-foot" style="margin-top:12px">Key: <strong>v</strong> vegetarian · <strong>vg</strong> vegan · <strong>gf</strong> gluten free · <strong>df</strong> dairy free · <strong>n</strong> contains nuts</p>
+  </div>
+</section>
+
+<!-- REAL WEDDING -->
+<section class="bg-white">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">A real Food Envy wedding</span>
+      <h2>Fiona &amp; Junou.</h2>
+    </div>
+    <div class="real-wedding reveal">
+      <div class="real-img" role="img" aria-label="Outdoor Wellington wedding reception"></div>
+      <div class="real-content">
+        <blockquote>"Everyone was raving about the food and the service. Good job on building the champagne tower for us — I know that wasn't easy to put together outside in windy Wellington. You guys did an amazing job on fulfilling all our requests."</blockquote>
+        <p style="font-weight:600;letter-spacing:.04em">— Fiona &amp; Junou, October 2025</p>
+        <div class="real-meta">
+          <div><small>Venue</small><span>Annam Cara</span></div>
+          <div><small>Date</small><span>25.10.2025</span></div>
+          <div><small>Guests</small><span>82 pax</span></div>
+          <div><small>Format</small><span>Canapés + Family Style</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="bg-black" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow on-dark">How it works</span>
+      <h2>A simple, considered process — built around getting your day right.</h2>
+      <p class="lede">Six steps from first enquiry to final pack-down. The same point of contact, the whole way through.</p>
+    </div>
+    <div class="process reveal">
+      <div class="step"><div class="step-num">Step 01</div><h4>Get in touch</h4><p>Send us an enquiry or give us a call. Tell us roughly when, where and how many — even rough numbers are fine.</p></div>
+      <div class="step"><div class="step-num">Step 02</div><h4>An introductory call</h4><p>We'll book a phone call with Zoe to gather the detail — venue, vision, menu preferences, dietaries and budget — so the proposal we build is properly tailored, not a template.</p></div>
+      <div class="step"><div class="step-num">Step 03</div><h4>Your tailored proposal</h4><p>A complete proposal with menu, package and pricing for your day. Travel, equipment hire and any extras are all included so there are no surprises later.</p></div>
+      <div class="step"><div class="step-num">Step 04</div><h4>Confirm your date</h4><p>Once you're happy, a deposit secures your date in our calendar and we begin planning in earnest. Wedding dates book out fast — the earlier the better.</p></div>
+      <div class="step"><div class="step-num">Step 05</div><h4>Complimentary tasting</h4><p>You're welcome to come into our HQ for a tasting of up to six menu items. A chance to meet our chefs, see where the magic happens, and finalise your selection.</p></div>
+      <div class="step"><div class="step-num">Step 06</div><h4>Your day</h4><p>We arrive, set up, serve, cut and plate your cake, pack down, and leave the venue exactly as we found it. Your only job is to enjoy yourselves.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE / RISK REVERSAL -->
+<section class="bg-beige">
+  <div class="wrap promise reveal">
+    <div>
+      <span class="eyebrow">Our promise to you</span>
+      <h2>The hard things, taken care of.</h2>
+      <p class="lede">Wedding dates book out fast through peak season. Your date is held the moment your deposit clears — and from that point on, the work moves to us.</p>
+      <a href="#guide" class="btn btn-primary" style="margin-top:8px">Get the Wedding Guide</a>
+    </div>
+    <div>
+      <ul class="promise-list">
+        <li><span class="check">✓</span><div><strong>One supplier, one invoice.</strong><span>Food, staff, hire equipment, set-up, service, cake, pack-down — coordinated by us.</span></div></li>
+        <li><span class="check">✓</span><div><strong>Transparent pricing.</strong><span>Travel, hire and extras itemised in your proposal. No surprises after the day.</span></div></li>
+        <li><span class="check">✓</span><div><strong>An experienced team.</strong><span>Our experienced team looks after you from your first enquiry through to the final pack-down.</span></div></li>
+        <li><span class="check">✓</span><div><strong>Dietaries handled, properly.</strong><span>Vegan, gluten free, dairy free, nut free options across every menu — no compromise.</span></div></li>
+        <li><span class="check">✓</span><div><strong>The venue, exactly as we found it.</strong><span>Set-up at the start, pack-down at the end. You don't lift a chair.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LATE NIGHT -->
+<section class="bg-white">
+  <div class="wrap">
+    <div class="latenight reveal">
+      <div>
+        <span class="eyebrow">Late-night snacks</span>
+        <h2>A second wind.</h2>
+        <p class="lede">Roll out a round of snacks once the dancing kicks in — built to be eaten with one hand and a drink in the other. The optional add-on most couples are glad they said yes to.</p>
+      </div>
+      <div class="lategrid">
+        <div><h4>Korean Fried Chicken</h4><p>Pickled daikon</p></div>
+        <div><h4>Lobster Roll</h4><p>Kewpie mayo, chive butter</p></div>
+        <div><h4>Pork Katsu Sando</h4><p>Curry mustard, shaved cabbage</p></div>
+        <div><h4>Southland Cheese Roll</h4><p>The Wellington classic</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="bg-beige">
+  <div class="wrap">
+    <div class="founder reveal">
+      <div class="founder-img" role="img" aria-label="Zoe Lloyd, Sales &amp; Events Manager at Food Envy"></div>
+      <div>
+        <span class="eyebrow">A note from Zoe</span>
+        <h2>"My job is to make all of this effortless for you."</h2>
+        <p>Your wedding is one of the few occasions where the food, the service and the feeling in the room all sit alongside each other in memory for years afterward. Our job is to make all three effortless for you, and unforgettable for your guests.</p>
+        <p>We've been catering Wellington weddings for fourteen years. In that time we've built a team of chefs, event managers and front-of-house staff who genuinely love what they do, and it shows. I'll be the one looking after you from first enquiry through to packing down at the end of the night.</p>
+        <p class="signature">Zoe</p>
+        <small style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fe-mute);font-weight:600">Zoe Lloyd · Sales &amp; Events Manager</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-white" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Common questions</span>
+      <h2>The things couples usually ask.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Where can you cater?</summary>
+        <p>Anywhere with space and power. We regularly cater across Wellington, Kapiti and the Wairarapa, including private homes, marquees, gardens and unconventional venues. Travel fees, where applicable, are itemised transparently in your proposal.</p>
+      </details>
+      <details>
+        <summary>Is there a minimum or maximum number of guests?</summary>
+        <p>Our menu packages are built for 30 guests and up. We've also delivered events for 2,000+ — and if your wedding is smaller, our delivered catering options are a great fit.</p>
+      </details>
+      <details>
+        <summary>What's included in the per-head price?</summary>
+        <p>Service staff and standard serveware are built into every package. Plated packages also include linen napkins, crockery, cutlery and glassware. Some packages include extra equipment as standard, while others are added on — your proposal lays it all out clearly.</p>
+      </details>
+      <details>
+        <summary>How does the tasting work?</summary>
+        <p>Once your date is confirmed, you're invited in for a complimentary tasting at our HQ — six items of your choosing. It's also a chance to meet the team and see where your wedding food is being made.</p>
+      </details>
+      <details>
+        <summary>When do you need final numbers?</summary>
+        <p>Two weeks out from the wedding, alongside any dietary requirements. This gives our chefs time to prep without compromise.</p>
+      </details>
+      <details>
+        <summary>How do dietary requirements work?</summary>
+        <p>Beautifully. We're proud of how many dietary-friendly options live across our menus by default — vegan, gluten free, dairy free, nut free and beyond. Confirm any specific guest dietaries with us by two weeks out, alongside your final numbers.</p>
+      </details>
+      <details>
+        <summary>Can you handle the bar and the wedding cake?</summary>
+        <p>Yes to both. We can provide a full bar service or staff a BYO setup for you. We'll also cut and serve your wedding cake on the night.</p>
+      </details>
+      <details>
+        <summary>What about hire equipment — chairs, tables, marquees?</summary>
+        <p>We use a trusted third-party partner for hire equipment and we coordinate it all on your behalf. One point of contact, one invoice, no juggling multiple suppliers.</p>
+      </details>
+      <details>
+        <summary>What about pack-down at the end of the night?</summary>
+        <p>Taken care of. Our team handles set-up, service and pack-down — you'll find the venue exactly as it began. The whole point: be a guest at your own wedding.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET (PRIMARY CONVERSION) -->
+<section class="leadmag" id="guide">
+  <div class="wrap leadmag-grid reveal">
+    <div class="guide-mock" aria-hidden="true">
+      <div class="gm-eyebrow">Food Envy</div>
+      <div>
+        <h3>Be a guest at your own wedding.</h3>
+      </div>
+      <div class="gm-foot">Wedding Guide · 2026 Edition</div>
+    </div>
+    <div>
+      <span class="eyebrow">The Food Envy Wedding Guide</span>
+      <h2>Everything you need to plan the food, in one place.</h2>
+      <ul class="leadmag-list">
+        <li>Full menu packages and pricing — no quote request required</li>
+        <li>Our 6-step process, start to finish</li>
+        <li>Real Wellington wedding stories and what to expect on the day</li>
+      </ul>
+      <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent — check your inbox'; this.querySelector('button').disabled=true;">
+        <div class="form-row two">
+          <div class="field"><label for="lm-name">First name</label><input id="lm-name" type="text" required placeholder="Casey" /></div>
+          <div class="field"><label for="lm-date">Wedding date</label><input id="lm-date" type="text" placeholder="Or 'still deciding'" /></div>
+        </div>
+        <div class="field"><label for="lm-email">Email</label><input id="lm-email" type="email" required placeholder="you@email.com" /></div>
+        <button type="submit" class="btn btn-primary">Send Me the Guide</button>
+        <p class="form-note">Straight to your inbox. No spam, ever. We'll only follow up if you ask us to.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY FORM (SECONDARY) -->
+<section class="bg-beige" id="enquire">
+  <div class="wrap">
+    <div class="enquiry reveal">
+      <div>
+        <span class="eyebrow">Prefer to talk it through?</span>
+        <h2>Send Zoe your date.</h2>
+        <p class="lede">A few details to start. She'll come back with availability and a tailored next step within one working day. No obligation, no auto-responder — replies come from Zoe directly.</p>
+        <div class="zoe-card">
+          <img src="images/zoe.jpg" alt="Zoe Lloyd, Sales &amp; Events Manager" onerror="this.style.background='var(--fe-green)';this.style.display='inline-block';this.removeAttribute('src')" />
+          <div>
+            <small>Your contact</small>
+            <strong>Zoe Lloyd</strong>
+            <span style="font-size:13px;color:var(--fe-mute)">events@foodenvy.nz · (04) 242 0080</span>
+          </div>
+        </div>
+      </div>
+      <form class="form light" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent — Zoe will be in touch'; this.querySelector('button').disabled=true;">
+        <div class="form-row two">
+          <div class="field"><label for="eq-name">Your name</label><input id="eq-name" type="text" required /></div>
+          <div class="field"><label for="eq-partner">Partner's name</label><input id="eq-partner" type="text" /></div>
+        </div>
+        <div class="form-row two">
+          <div class="field"><label for="eq-date">Wedding date or month</label><input id="eq-date" type="text" placeholder="e.g. March 2027" /></div>
+          <div class="field"><label for="eq-guests">Estimated guests</label><input id="eq-guests" type="text" placeholder="e.g. 80" /></div>
+        </div>
+        <div class="field"><label for="eq-venue">Venue (if known)</label><input id="eq-venue" type="text" /></div>
+        <div class="form-row two">
+          <div class="field"><label for="eq-email">Email</label><input id="eq-email" type="email" required /></div>
+          <div class="field"><label for="eq-phone">Phone</label><input id="eq-phone" type="tel" /></div>
+        </div>
+        <div class="field"><label for="eq-msg">Anything you'd like to share</label><textarea id="eq-msg" rows="4" placeholder="Vision, dietaries, format you're considering..."></textarea></div>
+        <button type="submit" class="btn btn-primary">Send to Zoe</button>
+        <p class="form-note">Replies usually come within one working day, directly from Zoe.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="footbrand"><span class="dot"></span>Food Envy</div>
+        <p style="margin:0;font-size:14px;line-height:1.6">Wellington's most iconic caterer. Weddings, conferences, and the city's biggest events.</p>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <a href="mailto:events@foodenvy.nz">events@foodenvy.nz</a>
+        <a href="tel:+6442420080">(04) 242 0080</a>
+        <a href="https://foodenvy.nz">foodenvy.nz</a>
+      </div>
+      <div>
+        <h5>On this page</h5>
+        <a href="#packages">Packages</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footline">
+      <span>© Food Envy. All rights reserved.</span>
+      <span>Pricing current as of latest edition. Excludes GST.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="mobile-cta"><a href="#guide">Get the Wedding Guide</a></div>
+
+<script>
+  // Tabs
+  document.querySelectorAll('.pack-tab').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const id = btn.dataset.pane;
+      document.querySelectorAll('.pack-tab').forEach(b=>b.classList.toggle('active', b===btn));
+      document.querySelectorAll('.pack-pane').forEach(p=>p.classList.toggle('active', p.id===id));
+    });
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
